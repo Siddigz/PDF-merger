@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Merger</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>PDF Merger</h1>
+      <p class="subtitle">Drop PDFs, reorder them, and download one merged file.</p>
+    </header>
+
+    <section
+      id="drop-zone"
+      class="drop-zone"
+      aria-label="Drop PDF files here"
+    >
+      <p class="drop-zone-text">Drag and drop PDF files here</p>
+      <p class="drop-zone-hint">or</p>
+      <label class="browse-btn">
+        Browse files
+        <input id="file-input" type="file" accept="application/pdf,.pdf" multiple hidden>
+      </label>
+    </section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <section id="file-list-section" class="file-list-section hidden">
+      <h2>Files to merge</h2>
+      <p class="hint">Drag rows to reorder. First file pages come first in the output.</p>
+      <ul id="file-list" class="file-list"></ul>
+    </section>
+
+    <div class="actions">
+      <button id="merge-btn" class="merge-btn" type="button" disabled>Merge PDFs</button>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
