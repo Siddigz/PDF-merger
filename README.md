@@ -1,10 +1,26 @@
 # PDF Merger
 
 A small web app to merge PDF files. Drag and drop PDFs, reorder them, and download the merged result.
+Built with FastAPI and pypdf; the merging happens on your own machine.
 
-## Setup (Windows)
+![PDF Merger](docs/screenshot.png)
 
-Requires [Python 3.10+](https://www.python.org/downloads/) with **Add python.exe to PATH** enabled during install.
+## Setup
+
+Requires [Python 3.10+](https://www.python.org/downloads/).
+
+**macOS / Linux**
+
+```bash
+cd PDF-merger
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+**Windows (PowerShell)**
+
+Install Python with **Add python.exe to PATH** enabled, then:
 
 ```powershell
 cd path\to\PDF-merger
@@ -13,15 +29,14 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-**Command Prompt** — use `\.venv\Scripts\activate.bat` instead of `Activate.ps1`.
-
-If PowerShell blocks activation, run once: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+In Command Prompt, use `.venv\Scripts\activate.bat` instead of `Activate.ps1`. If PowerShell blocks
+activation, run this once: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
 ## Run
 
 With the virtual environment active:
 
-```powershell
+```bash
 uvicorn app.main:app --reload
 ```
 
